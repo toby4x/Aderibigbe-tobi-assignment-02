@@ -13,10 +13,21 @@ const assignment = {};
  * @param {Array} arrayOfNumbers the array of numbers to sum
  * @returns number the sum of the numbers
  */
+
+// USING FOR LOOP
+// function sumOfNumbers(arrayOfNumbers) {
+//   let total = 0;
+//   for (let value of arrayOfNumbers) {
+//     total += value
+//   }
+//   return total;
+// }
+
+// USING ARRAY HIGHER ORDER FUNCTION "REDUCE"
 function sumOfNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+    return arrayOfNumbers.reduce((total, value) => total + value, 0);
 }
-// assignment.sumOfNumbers = sumOfNumbers;
+assignment.sumOfNumbers = sumOfNumbers;
 
 /**
  * Challenge - 2
@@ -27,10 +38,23 @@ function sumOfNumbers(arrayOfNumbers) {
  * @param {Array} arrayOfNumbers the array containing even or non-even numbers
  * @returns number the count of even numbers
  */
+
+// USING FOR LOOP
+// function countEvenNumbers(arrayOfNumbers) {
+//   let evenNumbers = [];
+//   for (let value of arrayOfNumbers) {
+//     if (value % 2 === 0) {
+//       evenNumbers.push(value);
+//     }
+//   }
+//   return evenNumbers.length;
+// }
+
+// USING ARRAY HIGHER ORDER FUNCTION "FILTER" 
 function countEvenNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+    return arrayOfNumbers.filter(value => (value % 2 === 0)).length;
 }
-// assignment.countEvenNumbers = countEvenNumbers;
+assignment.countEvenNumbers = countEvenNumbers;
 
 /**
  * Challenge - 3
@@ -46,10 +70,21 @@ function countEvenNumbers(arrayOfNumbers) {
  * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
  * @returns Array the converted temperatures in Fahrenheit
  */
+
+// USING FOR LOOP 
+// function celsiusToFahrenheit(arrayOfNumbers) {
+//   let convertedToFahrenheit = []
+//   for (let value of arrayOfNumbers) {
+//     convertedToFahrenheit.push(Math.trunc((value * (9/5)) + 32));
+//   }
+//   return convertedToFahrenheit;
+// }
+
+
 function celsiusToFahrenheit(arrayOfNumbers) {
-    return arrayOfNumbers;
+    return arrayOfNumbers.map(value => Math.trunc((value * (9/5)) + 32));
 }
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 
 // ========================
